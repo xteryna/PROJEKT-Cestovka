@@ -1,0 +1,11 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+$c-primary: #F03000;
+$c-grey1: #F0F0F0;
+$c-grey2: #80808080;
+$c-grey3: #888888;
+$c-grey4: #444444;
+$c-secondary: rgba(255, 255, 255, 1);
+$c-transparent: rgba(0, 0, 0, 0);
+$c-black: rgba(0, 0, 0, 1);
