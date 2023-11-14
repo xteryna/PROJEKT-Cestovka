@@ -9,3 +9,43 @@ $c-grey4: #444444;
 $c-secondary: rgba(255, 255, 255, 1);
 $c-transparent: rgba(0, 0, 0, 0);
 $c-black: rgba(0, 0, 0, 1);
+
+
+// ¸obecné formátování bloků a elementů
+
+
+.header__menu {
+    list-style: none;
+    padding: 0;
+}
+
+
+.trip__image {
+    width: 100%;
+    display: block;
+}
+
+figure {
+    margin: 0;
+    position: relative;
+    border: 1px solid black;
+}
+
+.trip__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.service {
+    background-color: $c-grey1;
+
+    &__icon {
+        height: 40px;
+    }
+    &__title {
+        color: $c-primary;
+    }
+}

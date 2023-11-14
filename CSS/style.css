@@ -4,4 +4,38 @@ html {
 
 *, ::before, ::after {
   box-sizing: inherit;
+}
+
+.header__menu {
+  list-style: none;
+  padding: 0;
+}
+
+.trip__image {
+  width: 100%;
+  display: block;
+}
+
+figure {
+  margin: 0;
+  position: relative;
+  border: 1px solid black;
+}
+
+.trip__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.service {
+  background-color: #F0F0F0;
+}
+.service__icon {
+  height: 40px;
+}
+.service__title {
+  color: #F03000;
 }/*# sourceMappingURL=style.css.map */

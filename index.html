@@ -3,112 +3,137 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>BEM ukázky</title>
+	<title>cestovka</title>
 	<link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 
-
     <header class="header">
-        <h1 class="header__title">
-            Cestovka
-        </h1>
-        <ul class="header__menu">
-            <li><a href="x">Last minute</a></li>
-            <li><a href="y">Destinace</a></li>
-            <li><a href="z">Časté otázky</a></li>
-        </ul>
+        <div class="header__logo">
+            <img class="header_" src="images/logo.svg" alt="logo cestovka">
+        </div>
+        <nav class="menu">
+            <a class="menu__item" href="x">Last minute</a>
+            <a class="menu__item" href="y">Destinace</a>
+            <a class="menu__item" href="z">Časté otázky</a>
+        </nav>
     </header>
 
-    <section class="offer">
-        <div class="offer__box">
-            <figure class="trip trip--big">
-                <img class="trip__image" src="images/palmy.png" alt="obrázek pláže s palmami">
-                <figcaption class="trip__title">Pohoda pod palmami</figcaption>
-                <p class="trip__description">Nejlepší dovolená pro nejvíc nejlínější lidi na světě</p>
-                <div class="trip__price">17 600 Kč</div>
-            </figure>  
-            <figure class="trip">
-                <img class="trip__image" src="images/jezero2.png" alt="obrázek horského jezera">
-                <figcaption class="trip__title">Klid u jezera</figcaption>
-                <div class="trip__price">8 490 Kč</div>
-            </figure>
-            <figure class="trip">
-                <img class="trip__image" src="images/nakole.png" alt="obrázek horská cyklistika">
-                <figcaption class="trip__title">Výlet na kole</figcaption>
-                <div class="trip__price">4 990 Kč</div>
-            </figure>
-        </div>
-    </section>
+    <main class="main">
 
-    <section class="services">
-        <div class="services__box">
-            <div class="service">
-                <img class="service__icon" src="images/map.png">
-                <caption class="service__caption">Podpora na místě</caption>
-                <p class="service__description">V cílové destinaci jsou k dispozici naši delegáti, kteří vám vždy rádi poradí.</p>
-            </div>
-            <div class="service">
-                <img class="service__icon" src="images/plane.png">
-                <caption class="service__caption">Služby na letišti</caption>
-                <p class="service__description">Při odletu tam i zpět za vás odbavíme vaše zavadla. Na letišti nebudete čekat.</p>
-            </div>
-            <div class="service">
-                <img class="service__icon" src="images/globe.png">
-                <caption class="service__caption">Do celého světa</caption>
-                <p class="service__description">Nabízíme pravidelné slevy na vybraných destinací na všech kontinentech.</p>
-            </div>
-            <div class="service">
-                <img class="service__icon" src="images/shield.png">
-                <caption class="service__caption">Vaše bezpečí</caption>
-                <p class="service__description">Není-li v cílové destinaci v čase odletu bezpečno, vrátíme vám peníze.</p>
-            </div>
-        </div>
-    </section>
+        <section class="section">
+            <div class="trips-grid">
+                <figure class="trip trip--big">
+                    <img class="trip__image" src="images/palmy.png" alt="pláž s palmami">
+                    <div class="trip__text">
+                        <figcaption class="trip__title">Pohoda pod palmami</figcaption>
+                        <p class="trip__description">Nejlepší dovolená pro nejvíc nejlínější lidi na světě</p>
+                        <div class="trip__price">17 600 Kč</div>
+                    </div>
+                </figure>
 
-    <section class="last-minute-offer">
-        <h2 class="last-minute-offer__title">Last minute zájezdy</h2>
-        <div class="last-minute-offer__box">
-            <figure class="trip">
-                <img class="trip__image" src="images/podkova.png" alt="obrázek Grand Canyon">
-                <figcaption class="trip__title">Grand Canyon</figcaption>
-                <div class="trip__price">18 500 Kč</div>
-            </figure>  
-            <figure class="trip">
-                <img class="trip__image" src="images/zatoka.png" alt="obrázek zátoky">
-                <figcaption class="trip__title">Pěšky po Kanárských ostrovech</figcaption>
-                <div class="trip__price">8 900 Kč</div>
-            </figure>
-            <figure class="trip trip--big">
-                <img class="trip__image" src="images/lodicka.png" alt="obrázek loďky na jezeře">
-                <figcaption class="trip__title">Romantika u horského jezera</figcaption>
-                <p class="trip__description">Dechberoucí výhledy na horské štíty a zrcadlovou hladinu jezera.</p>
-                <div class="trip__price">15 900 Kč</div>
-            </figure>
-        </div>
-    </section>
+                <figure class="trip">
+                    <img class="trip__image" src="images/jezero2.png" alt="horské jezera">
+                    <div class="trip__text">
+                        <figcaption class="trip__title">Klid u jezera</figcaption>
+                        <div class="trip__price">8 490 Kč</div>
+                    </div>
+                </figure>
+                <figure class="trip">
+                    <img class="trip__image" src="images/nakole.png" alt="horská cyklistika">
+                    <div class="trip__text">
+                        <figcaption class="trip__title">Výlet na kole</figcaption>
+                        <div class="trip__price">4 990 Kč</div>
+                    </div>
+                </figure>
+            </div>
+        </section>
 
-    <section class="newsletter">
-        <h2 class="newsletter__title">Novinky</h2>
-        <div class="newsletter__box">
-            <div class="news">
-                <p class="news__date">15. 8. 2020</p>
-                <caption class="news__caption">Magický Zanzibar</caption>
-                <p class="news__description">Zanzibar, při vyslovení jména tohoto kouzelného ostrova, se vybaví vůně exotických koření, příznivé klima, teplé moře, exotická flóra i fauna.</p>
+        <section class="section">
+            <div class="services__box">
+                <div class="service">
+                    <img class="service__icon" src="images/map.png">
+                    <div class="service__text">
+                        <caption class="service__title">Podpora na místě</caption>
+                        <p class="service__description">V cílové destinaci jsou k dispozici naši delegáti, kteří vám vždy rádi poradí.</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <img class="service__icon" src="images/plane.png">
+                    <div class="service__text">
+                        <caption class="service__title">Služby na letišti</caption>
+                        <p class="service__description">Při odletu tam i zpět za vás odbavíme vaše zavadla. Na letišti nebudete čekat.</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <img class="service__icon" src="images/globe.png">
+                    <div class="service__text">
+                        <caption class="service__title">Do celého světa</caption>
+                        <p class="service__description">Nabízíme pravidelné slevy na vybraných destinací na všech kontinentech.</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <img class="service__icon" src="images/shield.png">
+                    <div class="service__text">
+                        <caption class="service__title">Vaše bezpečí</caption>
+                        <p class="service__description">Není-li v cílové destinaci v čase odletu bezpečno, vrátíme vám peníze.</p>
+                    </div>
+                </div>
             </div>
-            <div class="news">
-                <p class="news__date">31. 9. 2020</p>
-                <caption class="news__caption">Návrat českých občanů ze zahraničí</caption>
-                <p class="news__description">Všichni občané ČR vracející se ze zahraničí zpět se musí řídit podmínkami uvedenými v platném Ochranném opatření Ministerstva zdravotnictví ČR.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">Last minute zájezdy</h2>
+            <div class="trips-grid trips-grid--last-min">
+                <figure class="trip">
+                    <img class="trip__image" src="images/podkova.png" alt="Grand Canyon">
+                    <div class="trip__text">
+                        <figcaption class="trip__title">Grand Canyon</figcaption>
+                        <div class="trip__price">18 500 Kč</div>
+                    </div>
+                </figure>  
+                <figure class="trip">
+                    <img class="trip__image" src="images/zatoka.png" alt="zátoka">
+                    <div class="trip__text">
+                        <figcaption class="trip__title">Pěšky po Kanárských ostrovech</figcaption>
+                        <div class="trip__price">8 900 Kč</div>
+                    </div>
+                </figure>
+                <figure class="trip trip--big">
+                    <img class="trip__image" src="images/lodicka.png" alt="loďka na jezeře">
+                    <div class="trip__text">
+                        <figcaption class="trip__title">Romantika u horského jezera</figcaption>
+                        <p class="trip__description">Dechberoucí výhledy na horské štíty a zrcadlovou hladinu jezera.</p>
+                        <div class="trip__price">15 900 Kč</div>
+                    </div>
+                </figure>
             </div>
-            <div class="news">
-                <p class="news__date">6. 10. 2020</p>
-                <caption class="news__caption">Na Kubu s PCR testem</caption>
-                <p class="news__description">Při vstupu do země se buď musíte prokázat negativním PCR testem na Covid-19, který byl proveden max. 72 hodin před příletem do destinace.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">Novinky</h2>
+            <div class="newsletter__box">
+                <div class="news">
+                    <p class="news__date">15. 8. 2020</p>
+                    <caption class="news__caption">Magický Zanzibar</caption>
+                    <p class="news__description">Zanzibar, při vyslovení jména tohoto kouzelného ostrova, se vybaví vůně exotických koření, příznivé klima, teplé moře, exotická flóra i fauna.</p>
+                </div>
+                <div class="news">
+                    <p class="news__date">31. 9. 2020</p>
+                    <caption class="news__caption">Návrat českých občanů ze zahraničí</caption>
+                    <p class="news__description">Všichni občané ČR vracející se ze zahraničí zpět se musí řídit podmínkami uvedenými v platném Ochranném opatření Ministerstva zdravotnictví ČR.</p>
+                </div>
+                <div class="news">
+                    <p class="news__date">6. 10. 2020</p>
+                    <caption class="news__caption">Na Kubu s PCR testem</caption>
+                    <p class="news__description">Při vstupu do země se buď musíte prokázat negativním PCR testem na Covid-19, který byl proveden max. 72 hodin před příletem do destinace.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
+
     <footer  class="footer">
         <p class="footer__text">©2021, Czechitas</p>
     </footer>
