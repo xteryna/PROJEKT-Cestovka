@@ -6,36 +6,180 @@ html {
   box-sizing: inherit;
 }
 
-.header__menu {
-  list-style: none;
-  padding: 0;
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 150%;
+  margin: 0;
 }
 
-.trip__image {
-  width: 100%;
+p {
+  margin: 0;
+}
+
+/* header */
+.header {
+  margin: 40px 20px 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    grid-template-columns: 240px 1fr;
+    justify-items: right;
+  }
+}
+
+.logo {
+  margin: 10px auto;
+  height: 30px;
   display: block;
+  width: 235px;
 }
 
-figure {
+.menu {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.menu__item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  max-width: 180px;
+  color: #F03000;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+.menu__item--inverted {
+  background-color: #F03000;
+  color: rgb(255, 255, 255);
+}
+
+/* sections */
+.section {
+  padding: 20px;
+}
+
+/* trips */
+.trips-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.trip {
   margin: 0;
   position: relative;
   border: 1px solid black;
 }
-
 .trip__text {
   position: absolute;
+  display: grid;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 20px;
+  grid-template-rows: 44px 1fr auto;
+  align-items: end;
+  justify-items: start;
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(128, 128, 128, 0.5019607843));
+}
+.trip__price {
+  background-color: #F03000;
+  padding: 10px;
+}
+.trip__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+.trip__image {
+  width: 100%;
+  min-height: 150px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.trip--big image {
+  min-height: 240px;
+}
+.trip--big .trip__title {
+  font-size: 28px;
+}
+
+@media screen and (min-width: 768px) {
+  .trips-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 380px 180px;
+    gap: 20px;
+    grid-auto-flow: dense;
+  }
+  .trip--big {
+    grid-column: 1/span2;
+    grid-row: 1;
+  }
+}
+.box-services {
+  display: grid;
+  gap: 10px;
 }
 
 .service {
   background-color: #F0F0F0;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 50px 1fr;
+  align-items: start;
 }
 .service__icon {
+  justify-self: center;
   height: 40px;
 }
 .service__title {
   color: #F03000;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.service__description {
+  padding-top: 10px;
+}
+
+.box-newsletter {
+  display: grid;
+  gap: 20px;
+}
+
+.news {
+  background-color: #F0F0F0;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+}
+.news__date {
+  color: #888888;
+}
+.news__title {
+  color: #F03000;
+  padding-top: 10px;
+  font-weight: 600;
+}
+.news__description {
+  padding-top: 10px;
+}
+
+.footer {
+  font-weight: 600;
+  margin: 20px 20px 40px;
+  padding: 20px;
+  background-color: #444444;
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat", sans-serif;
 }/*# sourceMappingURL=style.css.map */

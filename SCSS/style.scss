@@ -6,46 +6,214 @@ $c-grey1: #F0F0F0;
 $c-grey2: #80808080;
 $c-grey3: #888888;
 $c-grey4: #444444;
+$c-grey5: #E5E5E5;
 $c-secondary: rgba(255, 255, 255, 1);
 $c-transparent: rgba(0, 0, 0, 0);
 $c-black: rgba(0, 0, 0, 1);
 
+$f-titles: 'Montserrat', sans-serif;
 
-// ¸obecné formátování bloků a elementů
+$m-tablet: 768px;
+$m-PC: 960px;
 
-
-.header__menu {
-    list-style: none;
-    padding: 0;
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 150%;
+    margin: 0;
+}
+p {
+    margin:0;
 }
 
+/* header */
+.header {
+    margin: 40px 20px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:20px;
 
-.trip__image {
-    width: 100%;
+    
+    @media screen and (min-width: $m-tablet) {
+        grid-template-columns: 240px 1fr;
+        justify-items: right;
+    }
+
+}
+
+.logo {
+    margin: 10px auto;
+    height: 30px;
     display: block;
+    width: 235px;
 }
 
-figure {
+.menu {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);  
+    justify-items: center;
+    align-items: center;
+
+    &__item {
+        font-family: $f-titles;
+        font-size: 18px;
+        text-decoration: none;
+        max-width: 180px;
+        color: $c-primary;
+        display: block;
+        background-color: $c-secondary;
+        padding: 20px;
+
+        &--inverted {
+            background-color: $c-primary;
+            color: $c-secondary;
+        }
+    }
+}
+
+/* sections */
+
+.section {
+    padding: 20px;
+}
+
+/* trips */
+.trips-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.trip {
+
     margin: 0;
     position: relative;
     border: 1px solid black;
+
+    &__text {
+        position: absolute;
+        display: grid;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        grid-template-rows: 44px 1fr auto;
+        align-items: end;
+        justify-items: start;
+        color: $c-secondary;
+        background-image: linear-gradient(to bottom, $c-transparent 75%, $c-grey2);
+    }
+
+    &__price {
+        background-color: $c-primary;
+        padding: 10px;
+    }
+
+    &__title{
+        font-family: $f-titles;
+        font-size: 20px;
+        font-weight: 600;
+        padding-bottom: 15px;
+    }
+
+    &__image {
+        width: 100%;
+    min-height: 150px;
+    display: block;
+    object-fit: cover;
+    }
+
+    &--big {
+        image {min-height: 240px;}
+        .trip__title {font-size: 28px;}
+    }
 }
 
-.trip__text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+
+@media screen and (min-width: $m-tablet) {
+    .trips-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 380px 180px;
+        gap: 20px;
+        grid-auto-flow: dense; 
+    }
+
+    .trip {
+
+        &--big {
+            grid-column: 1 / span2;
+            grid-row: 1;
+        }
+    }
+
 }
+
+
+
+.box-services {
+    display: grid;
+    gap: 10px;
+}
+
 
 .service {
     background-color: $c-grey1;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 50px 1fr;
+    align-items: start;
 
     &__icon {
+        justify-self: center;
         height: 40px;
     }
     &__title {
         color: $c-primary;
+        font-size: 18px;
+        font-family: $f-titles;
+        font-weight: 600;
+    }
+
+    &__description {
+        padding-top: 10px;
+    }
+
+}
+
+
+.box-newsletter {
+    display: grid;
+    gap: 20px;
+}
+
+.news {
+    background-color: $c-grey1;
+    font-family: $f-titles;
+    padding: 20px;
+    &__date {
+        color: $c-grey3;
+        }
+
+    &__title {
+        color: $c-primary;
+        padding-top: 10px;
+        font-weight: 600;
+    }
+    &__description {
+        padding-top: 10px;
     }
 }
+
+.footer {
+    font-weight: 600;
+    margin: 20px 20px 40px;
+    padding: 20px;
+    background-color: $c-grey4;
+    color: $c-secondary;
+    font-family: $f-titles;
+    
+}
+
+
