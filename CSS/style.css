@@ -17,6 +17,11 @@ p {
   margin: 0;
 }
 
+.content {
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* header */
 .header {
   margin: 40px 20px 10px;
@@ -77,11 +82,46 @@ p {
     grid-auto-flow: dense;
   }
 }
+@media screen and (min-width: 960px) {
+  .trips-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 180px);
+  }
+}
 
 .trip {
   margin: 0;
   position: relative;
   border: 1px solid black;
+}
+.trip:first-child img {
+  min-height: 240px;
+}
+.trip:first-child .trip__title {
+  font-size: 28px;
+}
+@media screen and (min-width: 768px) {
+  .trip:first-child {
+    grid-column: 1/span 2;
+  }
+  .trip:first-child img {
+    height: 380px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media screen and (min-width: 960px) {
+  .trip:first-child {
+    grid-column: 1/span 2;
+    grid-row: 1/span 2;
+  }
+}
+@media screen and (min-width: 960px) {
+  .trips-grid--last-min .trip:first-child {
+    grid-column: 2/span 2;
+    grid-row: 1/span 2;
+  }
 }
 .trip__image {
   width: 100%;
@@ -98,23 +138,6 @@ p {
        object-fit: cover;
   }
 }
-.trip--big img {
-  min-height: 240px;
-}
-.trip--big .trip__title {
-  font-size: 28px;
-}
-@media screen and (min-width: 768px) {
-  .trip--big {
-    grid-column: 1/span 2;
-  }
-  .trip--big img {
-    height: 380px;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-}
 .trip__text {
   position: absolute;
   display: grid;
@@ -123,6 +146,7 @@ p {
   width: 100%;
   height: 100%;
   padding: 20px;
+  grid-template-columns: 1fr;
   grid-template-rows: 44px 1fr auto;
   align-items: end;
   justify-items: start;
@@ -139,6 +163,9 @@ p {
   font-weight: 600;
   padding-bottom: 15px;
 }
+.trip__description {
+  grid-column: 1;
+}
 
 .box-services {
   display: grid;
@@ -148,6 +175,11 @@ p {
   .box-services {
     gap: 20px;
     grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 960px) {
+  .box-services {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -182,6 +214,11 @@ p {
 .box-newsletter {
   display: grid;
   gap: 20px;
+}
+@media screen and (min-width: 960px) {
+  .box-newsletter {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .news {
