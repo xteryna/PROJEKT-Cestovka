@@ -82,13 +82,49 @@ p {
 .trips-grid {
     display: grid;
     gap: 20px;
+
+    @media screen and (min-width: $m-tablet) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 380px 180px;
+        grid-auto-flow: dense; 
+    }
 }
 
-.trip {
 
+
+.trip {
     margin: 0;
     position: relative;
     border: 1px solid black;
+
+    &__image {
+        width: 100%;
+        min-height: 150px;
+        display: block;
+        object-fit: cover;
+
+        @media screen and (min-width: $m-tablet) {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    &--big {
+        img {min-height: 240px;}
+        .trip__title {font-size: 28px;}
+
+        @media screen and (min-width: $m-tablet) {
+            grid-column: 1 / span 2;
+            
+            img {
+                height: 380px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
 
     &__text {
         position: absolute;
@@ -117,45 +153,25 @@ p {
         padding-bottom: 15px;
     }
 
-    &__image {
-        width: 100%;
-    min-height: 150px;
-    display: block;
-    object-fit: cover;
-    }
-
-    &--big {
-        image {min-height: 240px;}
-        .trip__title {font-size: 28px;}
-    }
-}
 
 
-@media screen and (min-width: $m-tablet) {
-    .trips-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 380px 180px;
-        gap: 20px;
-        grid-auto-flow: dense; 
-    }
-
-    .trip {
-
-        &--big {
-            grid-column: 1 / span2;
-            grid-row: 1;
-        }
-    }
 
 }
+
+
+
 
 
 
 .box-services {
     display: grid;
     gap: 10px;
-}
 
+    @media screen and (min-width: $m-tablet) {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
 .service {
     background-color: $c-grey1;
@@ -164,6 +180,11 @@ p {
     gap: 20px;
     grid-template-columns: 50px 1fr;
     align-items: start;
+
+    @media screen and (min-width: $m-tablet) {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
     &__icon {
         justify-self: center;
@@ -213,7 +234,7 @@ p {
     background-color: $c-grey4;
     color: $c-secondary;
     font-family: $f-titles;
-    
+    text-align: center;
 }
 
 

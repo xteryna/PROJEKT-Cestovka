@@ -70,11 +70,50 @@ p {
   display: grid;
   gap: 20px;
 }
+@media screen and (min-width: 768px) {
+  .trips-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 380px 180px;
+    grid-auto-flow: dense;
+  }
+}
 
 .trip {
   margin: 0;
   position: relative;
   border: 1px solid black;
+}
+.trip__image {
+  width: 100%;
+  min-height: 150px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .trip__image {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.trip--big img {
+  min-height: 240px;
+}
+.trip--big .trip__title {
+  font-size: 28px;
+}
+@media screen and (min-width: 768px) {
+  .trip--big {
+    grid-column: 1/span 2;
+  }
+  .trip--big img {
+    height: 380px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 .trip__text {
   position: absolute;
@@ -100,35 +139,16 @@ p {
   font-weight: 600;
   padding-bottom: 15px;
 }
-.trip__image {
-  width: 100%;
-  min-height: 150px;
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.trip--big image {
-  min-height: 240px;
-}
-.trip--big .trip__title {
-  font-size: 28px;
-}
 
-@media screen and (min-width: 768px) {
-  .trips-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 380px 180px;
-    gap: 20px;
-    grid-auto-flow: dense;
-  }
-  .trip--big {
-    grid-column: 1/span2;
-    grid-row: 1;
-  }
-}
 .box-services {
   display: grid;
   gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .box-services {
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .service {
@@ -138,6 +158,12 @@ p {
   gap: 20px;
   grid-template-columns: 50px 1fr;
   align-items: start;
+}
+@media screen and (min-width: 768px) {
+  .service {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 .service__icon {
   justify-self: center;
@@ -182,4 +208,5 @@ p {
   background-color: #444444;
   color: rgb(255, 255, 255);
   font-family: "Montserrat", sans-serif;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
