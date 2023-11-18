@@ -77,10 +77,22 @@ p {
     }
 }
 
+
+
 /* sections */
 
 .section {
     padding: 20px;
+    
+    &>p {
+        margin-top: 20px;
+    }
+
+    &>img {
+        display: block;
+        width: 100%;
+        margin: 40px 0;
+    }
 }
 
 /* trips */
@@ -259,6 +271,49 @@ p {
         padding-top: 10px;
     }
 }
+
+
+.divider {
+    background-color: $c-primary;
+    height: 2px;
+    margin: 40px 20px 0px;
+}
+
+.page-title {
+    font-size: 36px;
+    font-family: $f-titles;
+    font-weight: 600;
+    color: $c-primary;
+}
+
+
+.main--divided {
+    @media screen and (min-width: $m-PC) {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.section-left {
+    @media screen and (min-width: $m-PC) {
+        flex: 0 0 30%;
+        & .trips-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 180px);
+            & .trip:first-child {
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
+            }
+            & .trip__image {
+                height: 180px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+// .trips-grid--last-min &:first-child
 
 .footer {
     font-weight: 600;

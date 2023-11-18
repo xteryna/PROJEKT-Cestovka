@@ -69,6 +69,14 @@ p {
 .section {
   padding: 20px;
 }
+.section > p {
+  margin-top: 20px;
+}
+.section > img {
+  display: block;
+  width: 100%;
+  margin: 40px 0;
+}
 
 /* trips */
 .trips-grid {
@@ -236,6 +244,46 @@ p {
 }
 .news__description {
   padding-top: 10px;
+}
+
+.divider {
+  background-color: #F03000;
+  height: 2px;
+  margin: 40px 20px 0px;
+}
+
+.page-title {
+  font-size: 36px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #F03000;
+}
+
+@media screen and (min-width: 960px) {
+  .main--divided {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .section-left {
+    flex: 0 0 30%;
+  }
+  .section-left .trips-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 180px);
+  }
+  .section-left .trips-grid .trip:first-child {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+  }
+  .section-left .trips-grid .trip__image {
+    height: 180px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 .footer {
