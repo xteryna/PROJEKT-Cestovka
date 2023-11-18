@@ -60,7 +60,7 @@ p {
   background-color: rgb(255, 255, 255);
   padding: 20px;
 }
-.menu__item--inverted {
+.menu__item:hover {
   background-color: #F03000;
   color: rgb(255, 255, 255);
 }
