@@ -347,7 +347,22 @@ p {
     }
 }
 
+.hotel {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @media screen and (min-width: $m-tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
 
 .footer {
     font-weight: 600;
