@@ -104,11 +104,13 @@ p {
   border: 1px solid black;
   height: 150px;
 }
+@media screen and (min-width: 768px) {
+  .trip {
+    height: 180px;
+  }
+}
 .trip:first-child {
   height: 240px;
-}
-.trip:first-child img {
-  height: 100%;
 }
 .trip:first-child .trip__title {
   font-size: 28px;
@@ -116,12 +118,7 @@ p {
 @media screen and (min-width: 768px) {
   .trip:first-child {
     grid-column: 1/span 2;
-  }
-  .trip:first-child img {
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    height: 380px;
   }
 }
 @media screen and (min-width: 960px) {
@@ -166,9 +163,9 @@ p {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 600;
-  padding-bottom: 15px;
 }
 .trip__description {
+  padding-top: 15px;
   grid-column: 1;
 }
 
@@ -269,15 +266,13 @@ p {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 180px);
   }
-  .section--right .trips-grid .trip:first-child {
-    grid-column: 1/span 1;
-    grid-row: 1/span 1;
-  }
-  .section--right .trips-grid .trip__image {
+  .section--right .trips-grid .trip {
     height: 180px;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    grid-column: 1/span 1;
+    grid-row: auto/span 1;
+  }
+  .section--right .trips-grid .trip__title {
+    font-size: 18px;
   }
 }
 

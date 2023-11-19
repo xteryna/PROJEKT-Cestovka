@@ -120,21 +120,18 @@ p {
     position: relative;
     border: 1px solid black;
     height: 150px;
+    @media screen and (min-width: $m-tablet) {
+        height: 180px;
+    }
 
     // největší obrázek
     &:first-child {
         height: 240px;
-        img {height: 100%;}
         .trip__title {font-size: 28px;}
 
         @media screen and (min-width: $m-tablet) {
             grid-column: 1 / span 2;
-            
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
+            height: 380px;
         }
 
         @media screen and (min-width: $m-PC) {
@@ -156,12 +153,6 @@ p {
         height: 100%;
         display: block;
         object-fit: cover;
-
-        // @media screen and (min-width: $m-tablet) {
-        //     height: 100%;
-        //     width: 100%;
-        //     object-fit: cover;
-        // }
     }
     
  
@@ -190,17 +181,14 @@ p {
         font-family: $f-titles;
         font-size: 20px;
         font-weight: 600;
-        padding-bottom: 15px;
+        
     }
 
     &__description {
+        padding-top: 15px;
         grid-column: 1;
     }
 }
-
-
-
-
 
 
 .box-services {
@@ -303,15 +291,13 @@ p {
         & .trips-grid {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(3, 180px);
-            & .trip:first-child {
-                grid-column: 1 / span 1;
-                grid-row: 1 / span 1;
-            }
-            & .trip__image {
+            & .trip {
                 height: 180px;
-                width: 100%;
-                object-fit: cover;
+                grid-column: 1 / span 1;
+                grid-row: auto / span 1;
+                &__title {font-size: 18px;}
             }
+         
         }
     }
 }
