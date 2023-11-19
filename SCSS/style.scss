@@ -29,11 +29,12 @@ p {
 .content {
     max-width: 1200px;
     margin: auto;
+    padding: 0 20px;
 }
 
 /* header */
 .header {
-    margin: 40px 20px 10px;
+    margin: 40px 0 10px;
     display: grid;
     grid-template-columns: 1fr;
     gap:20px;
@@ -82,7 +83,7 @@ p {
 /* sections */
 
 .section {
-    padding: 20px;
+    padding: 20px 0;
     
     &>p {
         margin-top: 20px;
@@ -118,17 +119,19 @@ p {
     margin: 0;
     position: relative;
     border: 1px solid black;
+    height: 150px;
 
     // největší obrázek
     &:first-child {
-        img {min-height: 240px;}
+        height: 240px;
+        img {height: 100%;}
         .trip__title {font-size: 28px;}
 
         @media screen and (min-width: $m-tablet) {
             grid-column: 1 / span 2;
             
             img {
-                height: 380px;
+                height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
@@ -150,15 +153,15 @@ p {
 
     &__image {
         width: 100%;
-        min-height: 150px;
+        height: 100%;
         display: block;
         object-fit: cover;
 
-        @media screen and (min-width: $m-tablet) {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
+        // @media screen and (min-width: $m-tablet) {
+        //     height: 100%;
+        //     width: 100%;
+        //     object-fit: cover;
+        // }
     }
     
  
@@ -276,7 +279,7 @@ p {
 .divider {
     background-color: $c-primary;
     height: 2px;
-    margin: 40px 20px 0px;
+    margin-top: 40px;
 }
 
 .page-title {
@@ -287,16 +290,16 @@ p {
 }
 
 
-.main--divided {
+.divided {
     @media screen and (min-width: $m-PC) {
-        display: flex;
+        display: grid;
         gap: 20px;
+        grid-template-columns: 2fr 1fr;
     }
 }
 
-.section-left {
+.section--right {
     @media screen and (min-width: $m-PC) {
-        flex: 0 0 30%;
         & .trips-grid {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(3, 180px);
@@ -313,11 +316,56 @@ p {
     }
 }
 
-// .trips-grid--last-min &:first-child
+.section>.trip {
+    height: 100%;
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.box-information {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: $m-tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: $m-PC) {
+        grid-template-columns: 1fr;
+    }
+
+}
+.trip-info {
+    background-color: $c-grey1;
+    font-family: $f-titles;
+    padding: 20px;
+    &__label {
+        color: $c-grey3;
+        font-size: 14px;
+        }
+    &__description {
+        padding-top: 10px;
+        &--cena {
+            font-size: 28px;
+            font-weight: 600;
+        }
+    }
+    &--cena {
+        background-color: $c-primary;
+        >p {
+            color: $c-secondary;
+        }
+    }
+}
+
+
 
 .footer {
     font-weight: 600;
-    margin: 20px 20px 40px;
+    margin: 20px 0 40px;
     padding: 20px;
     background-color: $c-grey4;
     color: $c-secondary;

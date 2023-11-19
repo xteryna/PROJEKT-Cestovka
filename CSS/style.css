@@ -20,11 +20,12 @@ p {
 .content {
   max-width: 1200px;
   margin: auto;
+  padding: 0 20px;
 }
 
 /* header */
 .header {
-  margin: 40px 20px 10px;
+  margin: 40px 0 10px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -67,7 +68,7 @@ p {
 
 /* sections */
 .section {
-  padding: 20px;
+  padding: 20px 0;
 }
 .section > p {
   margin-top: 20px;
@@ -101,9 +102,13 @@ p {
   margin: 0;
   position: relative;
   border: 1px solid black;
+  height: 150px;
+}
+.trip:first-child {
+  height: 240px;
 }
 .trip:first-child img {
-  min-height: 240px;
+  height: 100%;
 }
 .trip:first-child .trip__title {
   font-size: 28px;
@@ -113,7 +118,7 @@ p {
     grid-column: 1/span 2;
   }
   .trip:first-child img {
-    height: 380px;
+    height: 100%;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
@@ -133,18 +138,10 @@ p {
 }
 .trip__image {
   width: 100%;
-  min-height: 150px;
+  height: 100%;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
-}
-@media screen and (min-width: 768px) {
-  .trip__image {
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
 }
 .trip__text {
   position: absolute;
@@ -249,7 +246,7 @@ p {
 .divider {
   background-color: #F03000;
   height: 2px;
-  margin: 40px 20px 0px;
+  margin-top: 40px;
 }
 
 .page-title {
@@ -260,25 +257,23 @@ p {
 }
 
 @media screen and (min-width: 960px) {
-  .main--divided {
-    display: flex;
+  .divided {
+    display: grid;
     gap: 20px;
+    grid-template-columns: 2fr 1fr;
   }
 }
 
 @media screen and (min-width: 960px) {
-  .section-left {
-    flex: 0 0 30%;
-  }
-  .section-left .trips-grid {
+  .section--right .trips-grid {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 180px);
   }
-  .section-left .trips-grid .trip:first-child {
+  .section--right .trips-grid .trip:first-child {
     grid-column: 1/span 1;
     grid-row: 1/span 1;
   }
-  .section-left .trips-grid .trip__image {
+  .section--right .trips-grid .trip__image {
     height: 180px;
     width: 100%;
     -o-object-fit: cover;
@@ -286,9 +281,58 @@ p {
   }
 }
 
+.section > .trip {
+  height: 100%;
+}
+.section > .trip__image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.box-information {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 768px) {
+  .box-information {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 960px) {
+  .box-information {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trip-info {
+  background-color: #F0F0F0;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+}
+.trip-info__label {
+  color: #888888;
+  font-size: 14px;
+}
+.trip-info__description {
+  padding-top: 10px;
+}
+.trip-info__description--cena {
+  font-size: 28px;
+  font-weight: 600;
+}
+.trip-info--cena {
+  background-color: #F03000;
+}
+.trip-info--cena > p {
+  color: rgb(255, 255, 255);
+}
+
 .footer {
   font-weight: 600;
-  margin: 20px 20px 40px;
+  margin: 20px 0 40px;
   padding: 20px;
   background-color: #444444;
   color: rgb(255, 255, 255);
